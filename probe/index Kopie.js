@@ -1,13 +1,13 @@
-const totalFrames = 30;
+const totalFrames = 6; // You have 5 images
 let currentFrame = 1;
 
 function updateFrame() {
   currentFrame++;
   if (currentFrame > totalFrames) currentFrame = 1;
 
-  const frameNumber = String(currentFrame).padStart(2, '0');
-  document.getElementById("stopMotion").src = `frames/frame${frameNumber}.png`;
+  // Use your specific image path pattern
+  document.getElementById("stopMotion").src = `/a-generative-graphic-novel-graphik_linda_kirsten_ivo/images/${currentFrame}.png`;
 }
 
-setInterval(updateFrame, 100); // 100ms = 10 FPS
+setInterval(updateFrame, 50); // 300ms = slower animation (adjust as needed)
 

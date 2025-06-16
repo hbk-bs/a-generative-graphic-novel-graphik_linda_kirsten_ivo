@@ -6,7 +6,7 @@ body {
   }
   
   .frame-container {
-	max-width: 600px;
+	max-width: 400px; /* Reduced from 600px to 400px */
 	margin: 0 auto;
 	border: 5px solid #ccc;
 	background: white;
@@ -20,3 +20,8 @@ body {
 	display: block;
   }
   
+  /* Add specific styling for the stop motion image if needed */
+  #stopMotion {
+    max-width: 300px; /* Set specific max width */
+    margin: 0 auto; /* Center the image within container */
+  }
