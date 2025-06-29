@@ -1,26 +1,41 @@
-# THE UNIVERSAL INTERFACE
+# A GENERATIVE GRAPHIC NOVEL
 
 
 
 
 ## *TASK*
-This project explores the creation of a speculative, beautiful, and meaningful web-based experience that interacts with users through a Large Language Model (LLM). Users provide inputs—text, images, location, or other data—which the model transforms into unexpected and poetic responses. In the first phase, different LLMs are explored, small prototypes are built, and prompt engineering techniques are practiced. The second phase focuses on developing the core concept and interaction flow. Finally, the project is refined visually, tested with real users, and polished into a playful, thoughtful digital experience.
+In this project, we work in small teams to create a digital, responsive graphic novel that combines AI-generated imagery, storytelling, and web technologies. Using tools like DALL·E 3, Stable Diffusion, or Midjourney, we develop a consistent visual style and build a coherent narrative with recurring characters. Text and dialogue can be generated with language models such as GPT. The final product is a responsive web page built with HTML, CSS, and JavaScript, possibly enhanced with animation, interaction, or sound to support the story. The result should provide an intuitive, cross-device reading experience. Deliverables include the finished webpage, a README describing the story, process, and tools used, a visual map of the narrative flow, and a suitable LICENSE file.
+
+## *IDEA / STORY*
+
+Our idea was not to simply create a traditional graphic novel in digital form, but to tell the story in a slightly different way—using the style of a stop-motion film. Content-wise, we came up with the idea of a small love story between two trees, which is ultimately destroyed by human interference. This became a creative and aesthetic exploration of the relationship between humans and nature, and humanity's relentless impact on it. An important aspect of our concept is that we used AI to generate and edit the story in a way that makes it loopable. By integrating text inserts, the reader/viewer is guided more explicitly through the narrative. We also aimed to preserve the fundamental character of a comic or graphic novel by varying the size of the frames.
+
+## *PROCESS*
+
+First, we asked ourselves which tools we could use to bring our idea to life. After some experimentation, we ultimately decided to use Midjourney. However, since even Midjourney didn’t always deliver the best results, we had to edit the images afterward using Adobe Photoshop. To manage the workload more efficiently, we decided to split the tasks: Linda and Kirsten were responsible for generating the images and scenes, while Ivo (that’s me) took care of everything related to code and text.
+
+## *TOOLS*
+
+* Midjourney for Ai images
+* Adobe Photoshop to edit the Ai images
+* Adobe InDesign for text
+
+## *PROBLEMS* 
+
+* Which AI image model do we actually want to use?
+* Midjourney had trouble generating consistent images 
+* Midjourney struggled to interpret our prompts correctly.
+
+- → Midjourney   
+- → We didn’t always generate new images; instead, we used the eraser tool in Midjourney to make adjustments.
+- → Try and error
 
 
-## *WHAT IS A LLM?*
-An LLM (Large Language Model) is an advanced AI system trained on large-scale text data using the Transformer architecture, which allows it to process and generate human-like language. It works by analyzing the context of a given input and predicting the most likely next word or sequence of words. Through this process, it can generate coherent text, answer questions, translate languages, and more. While it captures complex patterns and relationships in language, it does not possess real understanding or consciousness.
-
-## *WHAT IS AN API?*
-An API (Application Programming Interface) is a standardized interface that allows different software systems to communicate with each other. In my case, the API is used to retrieve information from OpenStreetMap and present it in a format that the LLM can understand — such as address data or geographical distances.
-
-
-## *IDEA* 
-My original idea was to develop a chat interface with a Large Language Model (LLM) that could assist me with location and navigation questions. To make this possible, I needed to transmit my current location to the model. However, I quickly realized that an LLM can't do much with raw coordinates, like those retrieved from a browser. It lacks direct access to external maps or geodata services that would allow it to translate this information into understandable text.
-To solve this, I integrated an interface to the OpenStreetMap API for what is known as "reverse geocoding." In this process, the coordinates are sent to OpenStreetMap, and the API converts them into readable addresses or location descriptions. These details are then provided to the LLM in advance.
-Additionally, I implemented another API that gives the model access to map data. This allows the chat interface to answer questions about distances and directions — for example, "How do I get to a specific place?"
-To make the project more engaging and entertaining, I also added a feature that lets users choose their mode of transportation — for instance, as a human, a bird, or even an ant. This way, users can playfully explore how long a route would take depending on their form of movement.
 
 
 
-### [NAVIGATION CHAT](https://hbk-bs.github.io/text-the-universal-interface-ivohartwig/projects/chat_standort_7.3_handy_osmr_animal_2_loca.2/)
+
+
+
+### [STOP MOTION FILM](https://hbk-bs.github.io/a-generative-graphic-novel-graphik_linda_kirsten_ivo/)
 
