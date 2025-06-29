@@ -1,29 +1,83 @@
-*,
-::after,
-::before {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-html {
-	font-size: 110%;
-}
-html,
-body {
-	height: 100%;
+html, body {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 
 body {
-	/* System UI */
-	font-family: system-ui, sans-serif;
-	font-weight: normal;
-	line-height: 1.5;
+  font-family: sans-serif;
+  text-align: center;
+  background: white;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-image,
-canvas,
-iframe,
-video,
-svg,
-textarea {
+  
+.frame-container {
+	max-width: 90%;
+	margin: 0 auto;
+	background: white;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+  
+img {
+	width: auto;
+	height: auto;
 	display: block;
+	max-width: 100%;
+	max-height: 80vh;
+	margin: 0 auto;
+	
+}
+  
+/* Canvas styling */
+canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+  
+  
+  
+h1 {
+    color: #333;
+    margin-bottom: 1.5rem;
+	font-style: italic;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .frame-container {
+    max-width: 95%;
+    padding: 0.5rem;
+  }
+  
+  img {
+    max-height: 70vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  
+  .frame-container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  img {
+    max-height: 85vh; /* Adjust this to prevent content overflow */
+    max-width: 95vw;
+   
+  }
 }
