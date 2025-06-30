@@ -1,13 +1,34 @@
-const totalFrames = 109; // You have 5 images
+const totalFrames = 109; // You have 109 images
 let currentFrame = 1;
 
 function updateFrame() {
   currentFrame++;
   if (currentFrame > totalFrames) currentFrame = 1;
 
-  // Use your specific image path pattern
-  document.getElementById("stopMotion").src = `/a-generative-graphic-novel-graphik_linda_kirsten_ivo/images2/${currentFrame}.png`;
+  // Create the image path
+  const imagePath = `/a-generative-graphic-novel-graphik_linda_kirsten_ivo/images2/${currentFrame}.png`;
+  const imageElement = document.getElementById("stopMotion");
+  
+  // Add error handling for image loading
+  imageElement.onerror = function() {
+    console.error(`Failed to load image: ${imagePath}`);
+    // Skip to next frame if this one fails
+    currentFrame++;
+    if (currentFrame > totalFrames) currentFrame = 1;
+    this.src = `/a-generative-graphic-novel-graphik_linda_kirsten_ivo/images2/${currentFrame}.png`;
+  };
+  
+  // Set the new image source
+  imageElement.src = imagePath;
+  
+  // Debug output (can be removed after debugging)
+  console.log(`Loading frame: ${currentFrame}`);
 }
 
-setInterval(updateFrame, 70); // 300ms = slower animation (adjust as needed)
+// Initialize with the first frame
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById("stopMotion").src = `/a-generative-graphic-novel-graphik_linda_kirsten_ivo/images2/1.png`;
+});
+
+setInterval(updateFrame, 70); // 70ms between frames
 
