@@ -30,5 +30,5 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById("stopMotion").src = `/a-generative-graphic-novel-graphik_linda_kirsten_ivo/images2/1.png`;
 });
 
-setInterval(updateFrame, 90); // 70ms between frames
+setInterval(updateFrame, 70); // 70ms between frames
 
