@@ -1,4 +1,4 @@
-const totalFrames = 146; // You have 109 images
+const totalFrames = 190; // You have 109 images
 let currentFrame = 1;
 
 
