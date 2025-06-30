@@ -44,7 +44,19 @@ canvas {
     height: auto;
 }
   
-  
+/* Debug info styling */
+.debug-info {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 1000;
+  display: none; /* Hidden by default, can be enabled for debugging */
+}
   
 h1 {
     color: #333;
