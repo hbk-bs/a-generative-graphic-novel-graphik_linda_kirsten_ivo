@@ -1,4 +1,4 @@
-const totalFrames = 98; // You have 5 images
+const totalFrames = 109; // You have 5 images
 let currentFrame = 1;
 
 function updateFrame() {
