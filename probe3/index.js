@@ -10,6 +10,9 @@ function preloadImages() {
   const loadingStatus = document.getElementById('loading-status');
   loadingStartTime = Date.now();
   
+  console.log('=== LOADING STARTED ===');
+  console.log(`Total frames to load: ${totalFrames}`);
+  
   for (let i = 1; i <= totalFrames; i++) {
     const img = new Image();
     img.src = `/a-generative-graphic-novel-graphik_linda_kirsten_ivo/images2/${i}.png`;
@@ -20,7 +23,14 @@ function preloadImages() {
       progressBar.style.width = percent + '%';
       loadingStatus.textContent = percent + '%';
       
+      // Log every 10% progress or every 10 images
+      if (imagesLoaded % 10 === 0 || percent % 10 === 0) {
+        console.log(`Loading progress: ${percent}% (${imagesLoaded}/${totalFrames} images loaded)`);
+      }
+      
       if (imagesLoaded === totalFrames) {
+        console.log('=== ALL IMAGES LOADED ===');
+        console.log(`Total loading time: ${(Date.now() - loadingStartTime) / 1000} seconds`);
         finishLoading();
       }
     };
@@ -33,6 +43,8 @@ function preloadImages() {
       loadingStatus.textContent = percent + '%';
       
       if (imagesLoaded === totalFrames) {
+        console.log('=== ALL IMAGES PROCESSED (with errors) ===');
+        console.log(`Total loading time: ${(Date.now() - loadingStartTime) / 1000} seconds`);
         finishLoading();
       }
     };
@@ -44,8 +56,11 @@ function finishLoading() {
   const loadingElapsed = Date.now() - loadingStartTime;
   const remainingTime = Math.max(0, minimumLoadingTimeMs - loadingElapsed);
   
+  console.log(`Waiting additional ${remainingTime/1000} seconds to meet minimum loading time`);
+  
   // Wait for minimum loading time before hiding the loading screen
   setTimeout(() => {
+    console.log('=== STARTING ANIMATION ===');
     document.getElementById('loading-screen').style.display = 'none';
     startAnimation();
   }, remainingTime);
@@ -79,12 +94,15 @@ function updateFrame() {
   // Set the new image source
   imageElement.src = imagePath;
   
-  // Debug output (can be removed after debugging)
-  console.log(`Loading frame: ${currentFrame}`);
+  // Only log every 10th frame to avoid console spam
+  if (currentFrame % 10 === 0) {
+    console.log(`Playing frame: ${currentFrame}`);
+  }
 }
 
 // Start preloading when document is ready
 document.addEventListener('DOMContentLoaded', function() {
+  console.log('Document ready, starting preload...');
   preloadImages();
 });
 
