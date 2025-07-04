@@ -1,0 +1,135 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background: white;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+  
+.frame-container {
+	max-width: 90%;
+	margin: 0 auto;
+	background: white;
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+  
+img {
+	width: auto;
+	height: auto;
+	display: block;
+	max-width: 100%;
+	max-height: 80vh;
+	margin: 0 auto;
+	
+}
+  
+/* Canvas styling */
+canvas {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+}
+  
+/* Debug info styling */
+.debug-info {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  z-index: 1000;
+  display: none; /* Hidden by default, can be enabled for debugging */
+}
+  
+h1 {
+    color: #333;
+    margin-bottom: 1.5rem;
+	font-style: italic;
+}
+
+/* Loading screen styles */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-container {
+  text-align: center;
+  max-width: 80%;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #eee;
+  border-radius: 10px;
+  margin: 15px 0;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background-color: #333;
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+#loading-status {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .frame-container {
+    max-width: 95%;
+    padding: 0.5rem;
+  }
+  
+  img {
+    max-height: 70vh;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+  
+  .frame-container {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+  img {
+    max-height: 85vh; /* Adjust this to prevent content overflow */
+    max-width: 95vw;
+   
+  }
+}
